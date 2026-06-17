@@ -12,7 +12,6 @@ namespace Endless_Runner_Game
 {
     public partial class Game : Form
     {
-
         bool jumping = false;
         int jumpSpeed = 12;
         int force = 12;
@@ -22,36 +21,30 @@ namespace Endless_Runner_Game
         int position;
         bool isGameOver = false;
 
-
         public Game()
         {
             InitializeComponent();
-
             GameReset();
-
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
             Trex.Top += jumpSpeed;
-
             txtScore.Text = "Score: " + score;
-            
+
             if (jumping == true && force < 0)
             {
-             jumping = false;
+                jumping = false;
             }
-            
+
             if (jumping == true)
             {
                 jumpSpeed = -12;
@@ -79,19 +72,27 @@ namespace Endless_Runner_Game
                     {
                         x.Left = this.ClientSize.Width + rand.Next(200, 500) + (x.Width * 15);
                         score++;
-
                     }
 
                     if (Trex.Bounds.IntersectsWith(x.Bounds))
                     {
                         gameTimer.Stop();
-                        Trex.Image = Properties.Resources.dead;
+                        // ПОПРАВЕНО: Преименувано от dead[1] на dead_1_
+                        Trex.Image = Properties.Resources.running_1_;   
+                        txtScore.Text += " Press R to Restart the game!";
+                        isGameOver = true;
                     }
                 }
             }
+
+            if (score > 5)
+            {
+                obstacleSpeed = 15;
+            }
         }
 
-        private void keyisdown(object sender, EventArgs e)
+        // ПОПРАВЕНО: Променено от EventArgs на KeyEventArgs
+        private void keyisdown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space && jumping == false)
             {
@@ -99,7 +100,8 @@ namespace Endless_Runner_Game
             }
         }
 
-        private void keyisup(object sender, EventArgs e)
+        // ПОПРАВЕНО: Променено от EventArgs на KeyEventArgs
+        private void keyisup(object sender, KeyEventArgs e)
         {
             if (jumping == true)
             {
@@ -120,21 +122,19 @@ namespace Endless_Runner_Game
             score = 0;
             obstacleSpeed = 10;
             txtScore.Text = "Score: " + score;
+
+            // Ако и тук ресурсът даде грешка, го промени на running_1_
             Trex.Image = Properties.Resources.running_1_;
             isGameOver = false;
             Trex.Top = 367;
 
-
-            foreach (Control x in  this.Controls)
+            foreach (Control x in this.Controls)
             {
-
                 if (x is PictureBox && (string)x.Tag == "obstacle")
                 {
                     position = this.ClientSize.Width + rand.Next(500, 800) + (x.Width * 10);
-
                     x.Left = position;
                 }
-                    
             }
 
             gameTimer.Start();

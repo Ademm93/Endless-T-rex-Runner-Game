@@ -44,7 +44,7 @@
             // Trex
             // 
             this.Trex.Image = global::Endless_Runner_Game.Properties.Resources.running_1_;
-            this.Trex.Location = new System.Drawing.Point(120, 364);
+            this.Trex.Location = new System.Drawing.Point(120, 367);
             this.Trex.Name = "Trex";
             this.Trex.Size = new System.Drawing.Size(40, 43);
             this.Trex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
