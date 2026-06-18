@@ -127,4 +127,10 @@
   <data name="obstacle-2[1]" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\obstacle-2[1].gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gpt-image-2_A_beautiful_8-bit_pixel_art_landscape_endless_desert_highway_at_dusk_retro_gamin-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gpt-image-2_A_beautiful_8-bit_pixel_art_landscape_endless_desert_highway_at_dusk_retro_gamin-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lucid-origin_A_minimalist_1-bit_pixel_art_background_endless_desert_landscape_solid_flat_ligh-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lucid-origin_A_minimalist_1-bit_pixel_art_background_endless_desert_landscape_solid_flat_ligh-0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

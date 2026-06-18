@@ -63,6 +63,28 @@ namespace Endless_Runner_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gpt_image_2_A_beautiful_8_bit_pixel_art_landscape_endless_desert_highway_at_dusk_retro_gamin_0 {
+            get {
+                object obj = ResourceManager.GetObject("gpt-image-2_A_beautiful_8-bit_pixel_art_landscape_endless_desert_highway_at_dusk_" +
+                        "retro_gamin-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lucid_origin_A_minimalist_1_bit_pixel_art_background_endless_desert_landscape_solid_flat_ligh_0 {
+            get {
+                object obj = ResourceManager.GetObject("lucid-origin_A_minimalist_1-bit_pixel_art_background_endless_desert_landscape_sol" +
+                        "id_flat_ligh-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap obstacle_1_1_ {
             get {
                 object obj = ResourceManager.GetObject("obstacle-1[1]", resourceCulture);
