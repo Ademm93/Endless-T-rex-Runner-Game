@@ -15,9 +15,10 @@ namespace Endless_Runner_Game
         bool jumping = false;
         int jumpSpeed = 0;
 
-        // Върната сила на скока за оригиналния размер на динозавъра
-        int force = 12;
-        int defaultForce = 12;
+        // ПРОМЕНЕНО: Начална сила за овална траектория. 
+        // Стойността 14 ни дава по-дълъг скок с плавно заобляне в горната точка.
+        int force = 14;
+        int defaultForce = 14;
 
         int score = 0;
         int obstacleSpeed = 10;
@@ -84,25 +85,26 @@ namespace Endless_Runner_Game
             Trex.Top += jumpSpeed;
             txtScore.Text = "Score: " + score;
 
-            if (jumping == true && force < 0)
-            {
-                jumping = false;
-            }
-
             if (jumping == true)
             {
-                jumpSpeed = -10; // Стандартна скорост на издигане нагоре
+                // ПРОМЕНЕНО: Скоростта зависи от силата (force). 
+                // В началото скача бързо нагоре, в пика скоростта става 0 (заобляне), а после пада надолу.
+                jumpSpeed = -force;
+
+                // Намаляваме силата плавно, за да симулираме гравитация
                 force -= 1;
             }
             else
             {
-                jumpSpeed = 10;  // Скорост на падане надолу
+                // Ако не е в режим на активен отскок, просто прилагаме стандартна скорост на падане
+                jumpSpeed = 12;
             }
 
             // Приземяване точно върху по-ниската черна кутия
             int trexFloor = pictureBox1.Top - Trex.Height;
             if (Trex.Top > trexFloor)
             {
+                jumping = false; // Спираме скока при докосване на земята
                 force = defaultForce;
                 Trex.Top = trexFloor;
                 jumpSpeed = 0;
